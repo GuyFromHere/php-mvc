@@ -1,0 +1,30 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+body {
+	background-color: bisque;
+}
+
+li {
+	float: left;
+	margin-right: 1.5rem;
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.banner {
+	padding: 1rem;
+	font-size: 24pt;
+}
+
+.banner li:hover {
+	text-decoration: underline;
+}

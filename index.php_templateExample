@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <?php 
+        require 'utilities/view.php';
+        $view = new View('views/head.tpl');
+        $view->set('title', 'TEST REST');
+        echo $view->output();
+    ?>
+    <?php 
+        $view = new View('views/header.tpl');
+        echo $view->output();
+    ?>
+
+    <div class="container">
+        <?php
+            $view = new View('views/main.tpl');
+            $view->set('greeting', 'Hello, World');
+            echo $view->output();
+        ?>
+    </div>
+
+</html>

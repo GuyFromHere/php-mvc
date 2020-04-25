@@ -1,36 +1,27 @@
 CREATE TABLE
 IF NOT EXISTS `categories`
 (
-  `id` int
-(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar
-(256) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) NOT NULL,
   `description` text NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY
-(`id`)
+  PRIMARY KEY(`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19;
 
 CREATE TABLE
 IF NOT EXISTS `products`
 (
-  `id` int
-(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar
-(32) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
   `description` text NOT NULL,
-  `price` decimal
-(10,0) NOT NULL,
-  `category_id` int
-(11) NOT NULL,
+  `price` decimal(10,0) NOT NULL,
+  `category_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY
 (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65;
-
-
 
 INSERT INTO `categories` (`
 id`,`name
@@ -68,32 +59,23 @@ id`,
 
 CREATE TABLE `categories`
 (
-`category_id` int
-(11) NOT NULL AUTO_INCREMENT,
-`category_name` varchar
-(150) NOT NULL,
-PRIMARY KEY
-(`category_id`)
+	`category_id` int(11) NOT NULL AUTO_INCREMENT,
+	`category_name` varchar(150) NOT NULL,
+	PRIMARY KEY
+	(`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `articles`
 (
-`id` int
-(11) NOT NULL AUTO_INCREMENT,
-`category` int
-(11) NOT NULL,
-`title` varchar
-(255) NOT NULL,
-`intro` text NOT NULL,
-`article` text NOT NULL,
-`date` datetime NOT NULL,
-`status` enum
-('Y','N') NOT NULL,
-PRIMARY KEY
-(`id`),
-KEY `FK_articles_categories`
-(`category`),
-CONSTRAINT `FK_articles_categories` FOREIGN KEY
-(`category`) REFERENCES `categories`
-(`category_id`)
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`category` int(11) NOT NULL,
+	`title` varchar(255) NOT NULL,
+	`intro` text NOT NULL,
+	`article` text NOT NULL,
+	`date` datetime NOT NULL,
+	`status` enum('Y','N') NOT NULL,
+	PRIMARY KEY(`id`),
+	KEY `FK_articles_categories` (`category`),
+	CONSTRAINT `FK_articles_categories` FOREIGN KEY (`category`) 
+	REFERENCES `categories` (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

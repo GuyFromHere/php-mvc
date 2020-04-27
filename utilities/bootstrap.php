@@ -1,10 +1,23 @@
 <?php
+
+	function console_log($output, $with_script_tags = true) {
+		$js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
+	');';
+		if ($with_script_tags) {
+			$js_code = '<script>' . $js_code . '</script>';
+		}
+		echo $js_code;
+	}
+
     // Set default values for controller, view, and query 
     // These will be used if 'load' is not set...
     $controller = "news";
     $action = "index";
     $query = null;
-
+	console_log('controller...');
+	console_log($controller);
+	console_log('action...');
+	console_log($action);
     // If 'load' is set, load the specified parameters for controller, view, and query
     if (isset($_GET['load'])) {
         $params = array();

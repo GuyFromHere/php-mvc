@@ -1,6 +1,6 @@
 <nav>
 	<ul id="menu">
-		<li><a href="/">Home</a></li>
-		<li><a href="/contact/index">Contact</a></li>
+		<li><a href="/php-mvc/">Home</a></li>
+		<li><a href="/php-mvc/contact/index">Contact</a></li>
 	</ul>
 </nav>

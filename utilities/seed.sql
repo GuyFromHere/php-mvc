@@ -56,13 +56,14 @@ id`,
 (60, 'Rolex Watch', 'Luxury watch.', '25000', 1, '2016-01-11 15:46:02', '2016-01-11 14:46:02');
 
 //
-
+DROP DATABASE simplemvc;
+CREATE DATABASE simplemvc;
+USE simplemvc;
 CREATE TABLE `categories`
 (
 	`category_id` int(11) NOT NULL AUTO_INCREMENT,
 	`category_name` varchar(150) NOT NULL,
-	PRIMARY KEY
-	(`category_id`)
+	PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `articles`
@@ -72,10 +73,20 @@ CREATE TABLE `articles`
 	`title` varchar(255) NOT NULL,
 	`intro` text NOT NULL,
 	`article` text NOT NULL,
-	`date` datetime NOT NULL,
+	`date` datetime NOT NULL DEFAULT current_timestamp,
 	`status` enum('Y','N') NOT NULL,
 	PRIMARY KEY(`id`),
 	KEY `FK_articles_categories` (`category`),
 	CONSTRAINT `FK_articles_categories` FOREIGN KEY (`category`) 
 	REFERENCES `categories` (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into categories (category_name)
+values ('Sports'),('Entertainment'),('Technology'),('Politics');
+
+insert into articles (category, title, intro, article, status)
+values (3, 'Dan creates an MVC app using PHP', 'This evening Dan created an MVC app using a PHP tutorial.', 
+'Dan made a thing. This is the thing. How does this thing work? This is the thing. Am I working? Thanks Dan.', 'Y');
+
+select * from categories;
+select * from articles;

@@ -3,7 +3,10 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<!-- contact success -->
 		<title><?php echo $title; ?></title>
+		<link rel="stylesheet" href="../public/assets/css/materialize.css"/>
+		<link rel="stylesheet" href="../public/assets/css/style.css"/>
 	</head>
 	<body>
 

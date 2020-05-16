@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- news details.tpl -->
 		<meta charset="utf-8" />
 		<title><?php echo $title; ?> | Article Details</title>
+		<link rel="stylesheet" href="../../public/assets/css/materialize.css"/>
+		<link rel="stylesheet" href="../../public/assets/css/style.css"/>
 	</head>
 	<body>
 
@@ -18,7 +21,7 @@
 			</p>
 		</article>
 
-		<a href="/">Back to article list</a>
+		<a href="/php-mvc/">Back to article list</a>
 
 	</body>
 </html>

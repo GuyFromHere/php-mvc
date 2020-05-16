@@ -12,24 +12,28 @@
 
 		<?php include HOME . DS .  'includes' . DS . 'menu.inc.php'; ?>
 
-		<h1><?php echo $title; ?></h1>
-		<h2>Data stored:</h2>
+		<div class="container">
+			<div class="row">
+				<h1><?php echo $title; ?></h1>
+				<h2>Data stored:</h2>
+			</div>
 
-		<?php if (!empty($userData['firstName'])): ?>
-		<h3>First Name:</h3>
-		<p><?php echo $userData['firstName']; ?></p>
-		<?php endif;?>
+			<?php if (!empty($userData['firstName'])): ?>
+			<h3>First Name:</h3>
+			<p><?php echo $userData['firstName']; ?></p>
+			<?php endif;?>
 
-		<?php if (!empty($userData['lastName'])): ?>
-		<h3>Last Name:</h3>
-		<p><?php echo $userData['lastName']; ?></p>
-		<?php endif;?>
+			<?php if (!empty($userData['lastName'])): ?>
+			<h3>Last Name:</h3>
+			<p><?php echo $userData['lastName']; ?></p>
+			<?php endif;?>
 
-		<h3>E-mail:</h3>
-		<p><?php echo $userData['email']; ?></p>
+			<h3>E-mail:</h3>
+			<p><?php echo $userData['email']; ?></p>
 
-		<h3>Message:</h3>
-		<?php echo $userData['message']; ?>
+			<h3>Message:</h3>
+			<?php echo $userData['message']; ?>
+		</div>
 
 	</body>
 </html>

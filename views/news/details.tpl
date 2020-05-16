@@ -10,18 +10,18 @@
 	<body>
 
 		<?php include HOME . DS . 'includes' . DS . 'menu.inc.php'; ?>
+		<div class="container">
+			<article>
+				<header>
+					<h1><?php echo $title; ?></h1>
+					<p>Published on: <time pubdate="pubdate"><?php echo $datePublished; ?></time></p>
+				</header>
+				<p>
+					<?php echo $articleBody; ?>
+				</p>
+			</article>
 
-		<article>
-			<header>
-				<h1><?php echo $title; ?></h1>
-				<p>Published on: <time pubdate="pubdate"><?php echo $datePublished; ?></time></p>
-			</header>
-			<p>
-				<?php echo $articleBody; ?>
-			</p>
-		</article>
-
-		<a href="/php-mvc/">Back to article list</a>
-
+			<a href="/php-mvc/">Back to article list</a>
+		</div>
 	</body>
 </html>

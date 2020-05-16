@@ -2,7 +2,7 @@ DROP DATABASE simplemvc;
 CREATE DATABASE simplemvc;
 USE simplemvc;
 
-CREATE TABLE IF NOT EXISTS `contact1` (
+CREATE TABLE IF NOT EXISTS `contact` (
 `id` INT(10) NOT NULL AUTO_INCREMENT,
 `first_name` VARCHAR(50) NULL,
 `last_name` VARCHAR(50) NULL,
@@ -19,27 +19,43 @@ CREATE TABLE `categories`
 	PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `articles`
+CREATE TABLE `authors`
+(
+	`author_id` int(11) NOT NULL AUTO_INCREMENT,
+	`author_name` varchar(150) NOT NULL,
+	PRIMARY KEY (`author_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `articles`
 (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`category` int(11) NOT NULL,
 	`title` varchar(255) NOT NULL,
 	`intro` text NOT NULL,
-	`article` text NOT NULL,
+	`body` text NOT NULL,
+    `author` int(11) NOT NULL,
 	`date` datetime NOT NULL DEFAULT current_timestamp,
-	`status` enum('Y','N') NOT NULL,
+	`status` enum('Y','N') NOT NULL DEFAULT 'Y',
 	PRIMARY KEY(`id`),
 	KEY `FK_articles_categories` (`category`),
 	CONSTRAINT `FK_articles_categories` FOREIGN KEY (`category`) 
-	REFERENCES `categories` (`category_id`)
+	REFERENCES `categories` (`category_id`),
+    KEY `FK_articles_authors` (`author`),
+    CONSTRAINT `FK_articles_authors` FOREIGN KEY (`author`) 
+	REFERENCES `authors` (`author_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into authors (author_name)
+values ('Dan Dismuke'), ('Adria Decker'), ('Sean Dismuke');
 
 insert into categories (category_name)
 values ('Sports'),('Entertainment'),('Technology'),('Politics');
 
-insert into articles (category, title, intro, article, status)
-values (3, 'Dan creates an MVC app using PHP', 'This evening Dan created an MVC app using a PHP tutorial.', 
-'Dan made a thing. This is the thing. How does this thing work? This is the thing. Am I working? Thanks Dan.', 'Y');
+insert into articles (category, author, title, intro, body)
+values (3, 1, 'Dan creates an MVC app using PHP', 'This evening Dan created an MVC app using a PHP tutorial.', 
+'Dan made a thing. This is the thing. How does this thing work? This is the thing. Am I working? Thanks Dan.');
 
 select * from categories;
 select * from articles;
+select * from authors;
+select * from contact;

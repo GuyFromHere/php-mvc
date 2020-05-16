@@ -9,34 +9,36 @@
 	</head>
 	<body>
 
-	<?php include HOME . DS . 'includes' . DS . 'menu.inc.php'; ?>
+		<?php include HOME . DS . 'includes' . DS . 'menu.inc.php'; ?>
 
-	<h1>News articles</h1>
+		<div class="container">
+			<h1>News articles</h1>
 
-	<?php
-		if ($articles):
-		foreach ($articles as $a): 
-	?>
+			<?php
+				if ($articles):
+				foreach ($articles as $a): 
+			?>
 
-		<article>
-			<header>
-				<h1><a href="/php-mvc/news/details/<?php echo $a['id']; ?>"><?php echo $a['title']; ?></a></h1>
-				<p><?php echo $a['category_name']; ?></p>
-				<p>Published on: <time pubdate="pubdate"><?php echo $a['date']; ?></time></p>
-			</header>
-			<p><?php echo $a['intro']; ?></p>
-			<p><a href="/php-mvc/news/details/<?php echo $a['id']; ?>">Continue reading</a></p>
-			<hr/>
-		</article>
-	<?php
-		endforeach;
-		else: 
-	?>
+				<article>
+					<header>
+						<h1><a href="/php-mvc/news/details/<?php echo $a['id']; ?>"><?php echo $a['title']; ?></a></h1>
+						<p><?php echo $a['category_name']; ?></p>
+						<p>Published on: <time pubdate="pubdate"><?php echo $a['date']; ?></time></p>
+					</header>
+					<p><?php echo $a['intro']; ?></p>
+					<p><a href="/php-mvc/news/details/<?php echo $a['id']; ?>">Continue reading</a></p>
+					<hr/>
+				</article>
+			<?php
+				endforeach;
+				else: 
+			?>
 
-		<h1>Welcome!</h1>
-		<p>We currently do not have any articles.</p>
+				<h1>Welcome!</h1>
+				<p>We currently do not have any articles.</p>
 
-	<?php endif; ?>
+			<?php endif; ?>
+		</div>
 
 	</body>
 </html>

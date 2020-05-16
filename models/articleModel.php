@@ -1,12 +1,28 @@
 <?php
 
-	class ArticlesModel extends Model {
+	class ArticleModel extends Model {
 		private $_category;
 		private $_title;
 		private $_author;
 		private $_intro;
 		private $_body;
 		private $_date;
+
+
+		// Get categories list from db so we can show it on the new article form
+		public function getCategories() {
+			$sql = "SELECT * FROM categories c
+			ORDER BY c.category_name ASC";
+
+			$this->_setSql($sql);
+			$categories = $this->getAll();
+
+			if (empty($categories)) {
+				return false;
+			}
+
+			return $categories;
+		}
 
 		public function setTitle($title) {
 			$this->_title = $title;
@@ -33,13 +49,14 @@
 		}
 
 		// status flag determines if article will be shown on front page
+		// default value is Y...adding method so we can change it with an edit feature later
 		public function setStatus($status) {
 			$this->_status = $status;
 		}
 
 		public function store() {
-			$sql = "INSERT INTO article
-			(category, title, intro, body, author, date, status)
+			$sql = "INSERT INTO articles
+			(category, author, title, intro, body)
 			VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 			$data = array(

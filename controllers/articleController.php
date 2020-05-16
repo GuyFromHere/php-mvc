@@ -1,10 +1,21 @@
 <?php
 
 	class ArticleController extends Controller {
-		public function index()
-		{
-			$this->_view->set('title', 'Add your new article here');
-			return $this->_view->output();
+		public function __construct($model, $action) {
+			parent::__construct($model, $action);
+			$this->_setModel($model);
+		}
+
+		// load article form view
+		public function index() {
+			try {
+				// call getCategories method to populate categories drop down
+				$categories = $this->_model->getCategories();
+				$this->_view->set('categories', $categories); 
+				return $this->_view->output();
+			} catch (Exception $e) {
+				echo "Application error (loading article form): " . $e->getMessage();
+			}
 		}
 
 		public function save(){
@@ -15,15 +26,16 @@
 			$errors = array();
 			$check = true;
 
-			$title = isset($_POST['title']) ? trim($_POST['title']) : NULL;
 			$category = isset($_POST['category']) ? trim($_POST['category']) : NULL;
+			$title = isset($_POST['title']) ? trim($_POST['title']) : NULL;
 			$author = isset($_POST['author']) ? trim($_POST['author']) : "";
+			$title = isset($_POST['intro']) ? trim($_POST['intro']) : NULL;
 			$body = isset($_POST['body']) ? trim($_POST['body']) : "";
 
-			if (empty($email)) {
+			if (empty($body)) {
 				$check = false;
-				array_push($errors, "E-mail is required!");
-			} else if (!filter_var( $email, FILTER_VALIDATE_EMAIL )) {
+				array_push($errors, "Body is required!");
+			} else if (!filter_var( $body, FILTER_VALIDATE_EMAIL )) {
 				$check = false;
 				array_push($errors, "Invalid E-mail!");
 			}
@@ -43,21 +55,23 @@
 
 			try {
 
-				$contact = new ContactModel();
-				$contact->setFirstName($firstName);
-				$contact->setLastName($lastName);
-				$contact->setEmail($email);
-				$contact->setMessage($message);
+				$contact = new ArticleModel();
+				$contact->setTitle($title);
+				$contact->setCategory($category);
+				$contact->setAuthor($author);
+				$contact->setIntro($intro);
+				$contact->setBody($body);
 				$contact->store();
 
 				$this->_setView('success');
 				$this->_view->set('title', 'Store success!');
 
 				$data = array(
-				'firstName' => $firstName,
-				'lastName' => $lastName,
-				'email' => $email,
-				'message' => $message
+				'title' => $title,
+				'category' => $category,
+				'author' => $author,
+				'intro' => $intro,
+				'body' => $body
 				);
 
 				$this->_view->set('userData', $data);
@@ -68,7 +82,7 @@
 				$this->_view->set('formData', $_POST);
 				$this->_view->set('saveError', $e->getMessage());
 			}
-
+			
 			return $this->_view->output();
 		}
 	}

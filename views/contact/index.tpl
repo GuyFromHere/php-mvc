@@ -37,16 +37,16 @@
 							type="text" 
 							id="first_name" 
 							name="first_name" 
-							placeholder="First Name"
 						/>
+						<label for="first_name">First Name</label>
 					</div>
 					<div class="input-field col s6">
 						<input value="<?php if(isset($formData)) echo $formData['last_name']; ?>" 
 							type="text" 
 							id="last_name" 
 							name="last_name"
-							placeholder="Last Name" 
 						/>
+						<label for="last_name">Last Name</label>
 					</div>
 				</div>
 
@@ -56,22 +56,23 @@
 							type="text" 
 							id="email" 
 							name="email" 
-							placeholder="Email"
 						/>
+						<label for="email">Email</label>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="input-field col s12">
-						<textarea name="message" id="message" rows="15" cols="50" placeholder="Leave a message">
+						<textarea name="message" id="message" rows="15" cols="50">
 							<?php if(isset($formData)) echo $formData['message']; ?>
 						</textarea>
+						<label for="message">Enter a message:</label>
 					</div>
 				</div>
 
 				<input type="submit" name="contactFormSubmit" value="Send" />
 			</form>
 		</div>
-
+		<script type="text/javascript" src="../public/assets/js/materialize.js"></script>
 	</body>
 </html>

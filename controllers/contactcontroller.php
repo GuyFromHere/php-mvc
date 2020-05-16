@@ -50,16 +50,17 @@
 				$contact->setMessage($message);
 				$contact->store();
 
+				// set view to success when form is submitted
 				$this->_setView('success');
 				$this->_view->set('title', 'Store success!');
 
+				// send user details to success template in userData variable
 				$data = array(
 				'firstName' => $firstName,
 				'lastName' => $lastName,
 				'email' => $email,
 				'message' => $message
 				);
-
 				$this->_view->set('userData', $data);
 
 			} catch (Exception $e) {

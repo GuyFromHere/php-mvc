@@ -28,3 +28,7 @@ a {
 .banner li:hover {
 	text-decoration: underline;
 }
+
+select {
+	display: block!important;
+}

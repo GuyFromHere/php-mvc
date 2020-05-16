@@ -31,19 +31,13 @@
 			<form action="/php-mvc/article/save" method="post">
 
 				<div class="input-field col s12">
-					<input value="<?php if(isset($formData)) echo $formData['title']; ?>" 
-						type="text" 
-						id="title" 
-						name="title" 
-					/>
-					<label>Title:</label>
-					
+					<input type="text" id="title" name="title" />
+					<label for="title">Title</label>
 				</div>
 				
-				<div class="input-field col s12">
-					
+				<div class="input-field col s12">	
 					<select id="category" name="categoryList">
-						<option value="" disabled selected>Choose your option</option>
+						<option value="" disabled selected>Choose a Category:</option>
 						<?php
 							if ($categories):
 							foreach ($categories as $c): 
@@ -58,32 +52,38 @@
 
 						<?php endif; ?>
 					</select>
-					<label>Category:</label>
 				</div>
 
 				<div class="input-field col s12">
-					<input value="<?php if(isset($formData)) echo $formData['author']; ?>" 
-						type="text" 
-						id="author" 
-						name="author" 
-					/>
-					<label>Author:</label>
+					<select id="author" name="authorList">
+						<option value="" disabled selected>Choose an Author:</option>
+						<?php
+							if ($authors):
+							foreach ($authors as $c): 
+						?>
+							<option value="<?php echo $c['author_id']; ?>"><?php echo $c['author_name']; ?></option>
 
+						<?php
+							endforeach;
+							else:
+						?>
+							<option value="xxx">Nada, Zilch, Zero</option>
+
+						<?php endif; ?>
+					</select>
 				</div>
 
 				<div class="input-field col s12">
-					<textarea name="intro" id="intro" rows="5" cols="50">
-						<?php if(isset($formData)) echo $formData['intro']; ?>
+					<textarea name="intro" id="intro" rows="5" cols="50" placeholder="Intro">
 					</textarea>
-					<label>Intro:</label>
-
+					<label for="intro">Intro</label>
 				</div>
 
 				<div class="input-field col s12">
-					<textarea name="body" id="body" rows="5" cols="50">
-						<?php if(isset($formData)) echo $formData['body']; ?>
+
+					<textarea name="body" id="body" rows="5" cols="50" placeholder="Body">
 					</textarea>
-					<label>Body:</label>
+					<label for="body">Article Body</label>
 
 				</div>
 

@@ -53,7 +53,7 @@
 		}
 
 		public function getArticleById($id) {
-			$sql = "SELECT a.title, a.body, DATE_FORMAT(a.date, '%d.%m.%Y.') as date, c.category_name, au.author_name
+			$sql = "SELECT a.title, a.body, DATE_FORMAT(a.date, '%m-%d-%Y.') as date, c.category_name, au.author_name
 			FROM articles a
 			INNER JOIN categories AS c ON a.category = c.category_id
 			INNER JOIN authors AS au ON a.author = au.author_id

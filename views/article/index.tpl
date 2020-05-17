@@ -4,7 +4,7 @@
 		<!-- contact index -->
 		<meta charset="utf-8" />
 		<title>New Article</title>
-		<link rel="stylesheet" href="../public/assets/css/materialize.css"/>
+		<link rel="stylesheet" href="../public/assets/css/materialize.min.css"/>
 		<link rel="stylesheet" href="../public/assets/css/style.css"/>
 	</head>
 	<body>

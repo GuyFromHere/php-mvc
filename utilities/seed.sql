@@ -46,16 +46,11 @@ CREATE TABLE IF NOT EXISTS `articles`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 insert into authors (author_name)
-values ('Dan Dismuke'), ('Adria Decker'), ('Sean Dismuke');
+values ('Dan Dismuke'), ('Albert Einstein'), ('Mark Twain');
 
 insert into categories (category_name)
 values ('Sports'),('Entertainment'),('Technology'),('Politics');
 
 insert into articles (category, author, title, intro, body)
-values (3, 1, 'Dan creates an MVC app using PHP', 'This evening Dan created an MVC app using a PHP tutorial.', 
-'Dan made a thing. This is the thing. How does this thing work? This is the thing. Am I working? Thanks Dan.');
-
-select * from categories;
-select * from articles;
-select * from authors;
-select * from contact;
+values (3, 1, 'New article', 'Dan made a thing.', 
+'Dan made a thing. This is the thing. How does this thing work? Am I working? Thanks Dan.');

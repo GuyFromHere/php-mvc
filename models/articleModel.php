@@ -89,16 +89,13 @@
 			$this->_body = $body;
 		}
 
-		public function setDate($date) {
-			$this->_date = $date;
-		}
-
 		// status flag determines if article will be shown on front page
 		// default value is Y...adding method so we can change it with an edit feature later
 		public function setStatus($status) {
 			$this->_status = $status;
 		}
 
+		
 		public function store() {
 			$sql = "INSERT INTO articles
 			(category, author, title, intro, body)

@@ -4,7 +4,7 @@
 		<!-- news details.tpl -->
 		<meta charset="utf-8" />
 		<title><?php echo $title; ?> | Article Details</title>
-		<link rel="stylesheet" href="../../public/assets/css/materialize.css"/>
+		<link rel="stylesheet" href="../../public/assets/css/materialize.min.css"/>
 		<link rel="stylesheet" href="../../public/assets/css/style.css"/>
 	</head>
 	<body>

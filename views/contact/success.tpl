@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
 		<!-- contact success -->
 		<title><?php echo $title; ?></title>
-		<link rel="stylesheet" href="../public/assets/css/materialize.css"/>
+		<link rel="stylesheet" href="../public/assets/css/materialize.min.css"/>
 		<link rel="stylesheet" href="../public/assets/css/style.css"/>
 	</head>
 	<body>
@@ -14,25 +14,39 @@
 
 		<div class="container">
 			<div class="row">
-				<h1><?php echo $title; ?></h1>
-				<h2>Data stored:</h2>
+				<div class="col s12">
+					<h1><?php echo $title; ?></h1>
+					<h2>Data stored:</h2>
+				</div>
 			</div>
-
-			<?php if (!empty($userData['firstName'])): ?>
-			<h3>First Name:</h3>
-			<p><?php echo $userData['firstName']; ?></p>
-			<?php endif;?>
+			<div class="row">
+				<?php if (!empty($userData['firstName'])): ?>	
+					<div class="col s6">
+						<h3>First Name:</h3>
+						<p><?php echo $userData['firstName']; ?></p>
+					</div>
+				<?php endif;?>
 
 			<?php if (!empty($userData['lastName'])): ?>
-			<h3>Last Name:</h3>
-			<p><?php echo $userData['lastName']; ?></p>
+				<div class="col s6">
+					<h3>Last Name:</h3>
+					<p><?php echo $userData['lastName']; ?></p>
+				</div>
 			<?php endif;?>
+			</div>
 
-			<h3>E-mail:</h3>
-			<p><?php echo $userData['email']; ?></p>
-
-			<h3>Message:</h3>
-			<?php echo $userData['message']; ?>
+			<div class="row">
+				<div class="col s12">
+					<h3>E-mail:</h3>
+					<p><?php echo $userData['email']; ?></p>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<h3>Message:</h3>
+					<?php echo $userData['message']; ?>
+				</div>
+			</div>	
 		</div>
 
 	</body>

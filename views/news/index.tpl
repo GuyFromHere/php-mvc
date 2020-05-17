@@ -4,7 +4,7 @@
 	<!-- news index.tpl -->
 		<meta charset="utf-8" />
 		<title><?php echo $title; ?></title>
-		<link rel="stylesheet" href="public/assets/css/materialize.css"/>
+		<link rel="stylesheet" href="public/assets/css/materialize.min.css"/>
 		<link rel="stylesheet" href="public/assets/css/style.css"/>
 	</head>
 	<body>
@@ -18,7 +18,8 @@
 				if ($articles):
 				foreach ($articles as $a): 
 			?>
-
+				<div class="row">
+					<div class="col s12">
 				<article>
 					<header>
 						<h1><a href="/php-mvc/news/details/<?php echo $a['id']; ?>"><?php echo $a['title']; ?></a></h1>
@@ -29,6 +30,8 @@
 					<p><a href="/php-mvc/news/details/<?php echo $a['id']; ?>">Continue reading</a></p>
 					<hr/>
 				</article>
+					</div>
+				</div>
 			<?php
 				endforeach;
 				else: 

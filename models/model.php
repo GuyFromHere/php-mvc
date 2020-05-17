@@ -1,5 +1,6 @@
 <?php
 
+	// Base Model class
 	class Model {
 		protected $_db;
 		protected $_sql;

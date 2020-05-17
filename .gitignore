@@ -1,1 +1,5 @@
+# db config
 config.php
+
+# composer files
+vendor/

@@ -30,7 +30,7 @@ Create a file called config.php in the root of the folder. Store your database c
 
    $root = explode('\\', `__DIR__`);
 
-   define ('ROOT', end($root));
+   define ('APPROOT', end($root));
   
   \?>
 

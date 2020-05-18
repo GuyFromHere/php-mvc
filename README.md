@@ -28,7 +28,7 @@ Create a file called config.php in the root of the folder. Store your database c
    
    (i.e. /path/to/htdocs/php-mvc/index.php ) */
 
-   $root = explode('\\', __DIR__);
+   $root = explode('\\', `__DIR__`);
 
    define ('ROOT', end($root));
   

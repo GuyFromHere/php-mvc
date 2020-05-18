@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!-- contact index -->
+		<!-- new Article index -->
 		<meta charset="utf-8" />
-		<title>New Article</title>
+		<title>Add A New Article</title>
 		<link rel="stylesheet" href="../public/assets/css/materialize.min.css"/>
-		<link rel="stylesheet" href="../public/assets/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../public/assets/css/style.css"/>
+
 	</head>
 	<body>
 
@@ -28,11 +29,10 @@
 			?>
 
 
-			<form action="/php-mvc/article/save" method="post">
+			<form action="/<?php echo APPROOT ?>/article/save" method="post">
 
 				<div class="input-field col s12">
-					<input type="text" id="title" name="title" />
-					<label for="title">Title</label>
+					<input type="text" id="title" name="title" placeholder="Title"/>
 				</div>
 				
 				<div class="input-field col s12">	
@@ -59,30 +59,47 @@
 						<option value="" disabled selected>Choose an Author:</option>
 						<?php
 							if ($authors):
-							foreach ($authors as $c): 
+								foreach ($authors as $c): 
 						?>
-							<option value="<?php echo $c['author_id']; ?>"><?php echo $c['author_name']; ?></option>
+							<option value="<?php echo $c['author_id']; ?>">
+								<?php echo $c['author_name']; ?>
+							</option>
 
 						<?php
-							endforeach;
-							else:
+								endforeach;
 						?>
-							<option value="xxx">Nada, Zilch, Zero</option>
-
 						<?php endif; ?>
 					</select>
 				</div>
-
+				<label>Intro</label>
 				<div class="input-field col s12">
-					<textarea name="intro" id="intro" rows="5" cols="50" placeholder="Intro">
-					</textarea>
-					<label for="intro">Intro</label>
+					<div name="intro" id="inputDivIntro" contenteditable="true" class="editableDiv">
+					</div>
+					<textarea name="intro" id="intro" class="hiddenText"></textarea>
+				</div>
+				
+				<div class="input-field col s12">
+					<div name="body" id="inputDivBody" contenteditable="true" class="editableDiv">
+					</div>
+					<textarea name="body" id="body" class="hiddenText"></textarea>
 				</div>
 
-				
-				<input type="submit" name="contactFormSubmit" value="Save" />
+				<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
 			</form>
 		</div>
+		<script>
 
+			// Event Handlers
+			// Copy contents of input divs to hidden textareas which are used as form inputs.
+			document.getElementById("inputDivIntro").addEventListener("input", function(e) {
+				document.getElementById("intro").innerHTML = e.target.innerHTML;
+			})
+			
+			document.getElementById("inputDivBody").addEventListener("input", function(e) {
+				document.getElementById("body").innerHTML = e.target.innerHTML;
+			})
+
+			
+		</script>
 	</body>
 </html>

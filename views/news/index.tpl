@@ -20,16 +20,20 @@
 			?>
 				<div class="row">
 					<div class="col s12">
-				<article>
-					<header>
-						<h1><a href="/php-mvc/news/details/<?php echo $a['id']; ?>"><?php echo $a['title']; ?></a></h1>
-						<p><?php echo $a['category_name']; ?></p>
-						<p>Published on: <time pubdate="pubdate"><?php echo $a['date']; ?></time></p>
-					</header>
-					<p><?php echo $a['intro']; ?></p>
-					<p><a href="/php-mvc/news/details/<?php echo $a['id']; ?>">Continue reading</a></p>
-					<hr/>
-				</article>
+						<article>
+							<header>
+								<h1><a href="/<?php echo APPROOT ?>/news/details/<?php echo $a['id']; ?>"><?php echo $a['title']; ?></a></h1>
+								<div class="categoryContainer">Category: 
+									<div class="newsCategoryBubble">
+										<?php echo $a['category_name'] ?>
+									</div>
+								</div>
+								<div class="pubDate"><?php echo $a['date']; ?></div>
+							</header>
+							<p><?php echo $a['intro']; ?></p>
+							<p><a href="/<?php echo APPROOT ?>/news/details/<?php echo $a['id']; ?>">Continue reading</a></p>
+							<hr/>
+						</article>
 					</div>
 				</div>
 			<?php

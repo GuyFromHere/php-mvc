@@ -23,6 +23,14 @@ Create a file called config.php in the root of the folder. Store your database c
    define ('DB_USER',  'your_username');
    
    define ('DB_PASS',  'your_password');
+
+   /* ONLY add the following if your index.php is in a subfolder of htdocs 
+   
+   (i.e. /path/to/htdocs/php-mvc/index.php ) */
+
+   $root = explode('\\', __DIR__);
+
+   define ('ROOT', end($root));
   
   \?>
 
@@ -31,7 +39,11 @@ NOTE: The MySQL user must have write access to the database.
 
 # Installation 
 
-Clone the repo in to the htdocs folder of your web server. 
+Clone the repo in to the htdocs folder of your web server (i.e. htdocs/php-mvc ).
+
+If you put the files in the htdocs folder make sure to remove references to the ROOT variable in your paths. 
+
+For instance, in includes/menu.inc.php you'll want to remove /<?php echo ROOT ?> from the links.
 
 Run the seed.sql script to build the tables and populate a sample article.
 
@@ -48,4 +60,7 @@ Add authentication
 Text editor 
 
 Image uploads
+
+Styling
+
 

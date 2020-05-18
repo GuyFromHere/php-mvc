@@ -1,5 +1,5 @@
 <?php
-
+	// Function for printing to console from inside the PHP
 	function console_log($output, $with_script_tags = true) {
 		$js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
 	');';
@@ -14,10 +14,7 @@
     $controller = "news";
     $action = "index";
     $query = null;
-	console_log('controller...');
-	console_log($controller);
-	console_log('action...');
-	console_log($action);
+	
     // If 'load' is set, load the specified parameters for controller, view, and query
     if (isset($_GET['load'])) {
         $params = array();
@@ -38,10 +35,15 @@
     $modelName = $controller;
     $controller .= 'Controller';
     $load = new $controller($modelName, $action);
-
+	console_log('controller...');
+	console_log($controller);
+	console_log('action...');
+	console_log($action);
     // invoke method named after $action 
     // e.g. $load->index($query))
     if (method_exists($load, $action)) {
+		console_log('bootstrap query:');
+		console_log($query);
         $load->$action($query);
     } else {
         die('Invalid method. Please check the URL.');

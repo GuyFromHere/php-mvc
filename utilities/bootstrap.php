@@ -11,7 +11,7 @@
 
     // Set default values for controller, view, and query 
     // These will be used if 'load' is not set...
-    $controller = "news";
+    $controller = "home";
     $action = "index";
     $query = null;
 	

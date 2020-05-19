@@ -5,7 +5,7 @@
 }
 
 body {
-	background-color: bisque;
+	background-color: #e3f2fd;
 	/* materialze: for sticky footer  */
 	display: flex;
 	min-height: 100vh;
@@ -17,12 +17,12 @@ main {
 	flex: 1 0 auto;
 }
 
+/*
 li {
 	float: left;
 	margin-right: 1.5rem;
 	list-style-type: none;
-}
-
+} 
 a {
 	text-decoration: none;
 	cursor: pointer;
@@ -40,7 +40,7 @@ a {
 select {
 	display: block !important;
 }
-
+ */
 .editableDiv {
 	background-color: #ffffff !important;
 	border: 1px solid gray;

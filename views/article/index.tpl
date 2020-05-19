@@ -59,15 +59,17 @@
 						</select>
 					</div>
 					
+					<label>Intro</label>
 					<div class="input-field col s12">
-						<label>Intro</label>
+						
 						<div name="intro" id="inputDivIntro" name="inputDivIntro" contenteditable="true" class="editableDiv">
 						</div>
 						<textarea name="intro" id="intro" class="hiddenText"></textarea>
 					</div>
 					
+					<label>Body</label>
 					<div class="input-field col s12">
-						<label>Body</label>
+						
 						<div name="body" id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv">
 						</div>
 						<textarea name="body" id="body" class="hiddenText"></textarea>

@@ -42,3 +42,15 @@ select {
 .hiddenText {
 	display: none;
 }
+
+.articleTitle {
+	display: block;
+	color: white;
+	font-size: 24pt;
+}
+
+.articleIntro {
+	color: white;
+	font-size: 16pt;
+
+}

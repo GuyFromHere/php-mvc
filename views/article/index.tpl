@@ -83,7 +83,6 @@
 					</div>
 					<textarea name="body" id="body" class="hiddenText"></textarea>
 				</div>
-
 				<button class="btn waves-effect waves-light" type="submit" id="articleFormSubmit" name="action">Submit</button>
 			</form>
 		</div>

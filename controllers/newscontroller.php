@@ -24,6 +24,8 @@
 
 				if ($article) {
 					$this->_view->set('title', $article['title']);
+					$this->_view->set('authorName', $article['author_name']);
+					$this->_view->set('intro', $article['intro']);
 					$this->_view->set('articleBody', $article['body']);
 					$this->_view->set('datePublished', $article['date']);
 				} else {

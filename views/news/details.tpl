@@ -11,16 +11,15 @@
 
 		<?php include HOME . DS . 'includes' . DS . 'menu.inc.php'; ?>
 		<div class="container">
-			<article>
-				<header>
-					<h1><?php echo $title; ?></h1>
-					<h2>By <?php echo $author_name ?></h2>
-					<p>Published on: <time pubdate="pubdate"><?php echo $datePublished; ?></time></p>
-				</header>
-				<p>
-					<?php echo $articleBody; ?>
-				</p>
-			</article>
+				<div class="articleHeader">
+					<span class="articleTitle"><?php echo $title; ?></span>
+					<span class="articleIntro"><?php echo $intro ?></span>
+					<h5>By <?php echo $authorName ?></h5>
+					<h5>Published on: <time pubdate="pubdate"><?php echo $datePublished; ?></time></h5>
+				</div>
+				<div class="articleBody">
+					<p><?php echo $articleBody; ?></p>
+				</div>
 
 			<a href="/">Back to article list</a>
 		</div>

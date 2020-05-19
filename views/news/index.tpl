@@ -22,7 +22,7 @@
 						<article>
 							<header>
 								<h4><a href="/news/details/<?php echo $a['id']; ?>"><?php echo $a['title']; ?></a></h4>
-								<h5><?php echo $a['author_name'] ?></h5>
+								<h5>By <?php echo $a['author_name'] ?></h5>
 								<div class="categoryContainer">Category: 
 									<div class="newsCategoryBubble">
 										<?php echo $a['category_name'] ?>

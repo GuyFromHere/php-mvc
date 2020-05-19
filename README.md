@@ -4,7 +4,7 @@
 
 _This project is under construction._
 
-I wanted a meaty PHP project to provide a bit of a break from the node projects I'd been working on. I found [this](https://isitoktocode.com/post/create-a-simple-php-mvc-framework?cookieChange) tutorial for building a news app in PHP following the Model-View-Controller paradigm and thought it looked like fun. I started with that and added Materialize CSS as well as my own models and controllers. The goal is to build a fully functional blog with authentication and a WSIWYG editor. Check it out in its current state here: https://php-mvc-gfh.herokuapp.com/
+I wanted a meaty PHP project to provide a bit of a break from the node projects I'd been working on. I found [this](https://isitoktocode.com/post/create-a-simple-php-mvc-framework?cookieChange) tutorial for building a news app in PHP following the Model-View-Controller paradigm and thought it looked like fun. I started with that and added Materialize CSS as well as my own models and controllers. The goal is to build a fully functional blog with authentication and a WSIWYG editor. 
 
 ![add an article](readme/add.png)
 

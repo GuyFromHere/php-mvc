@@ -2,6 +2,8 @@
 
 	class ArticleController extends Controller {
 		public function __construct($model, $action) {
+
+			console_log('article controller constructor');
 			parent::__construct($model, $action);
 			$this->_setModel($model);
 		}
@@ -22,14 +24,14 @@
 		}
 
 		public function save(){
-			if (!isset($_POST['contactFormSubmit'])) {
-				header('Location: /php-mvc/article/index');
+			if (!isset($_POST['articleFormSubmit'])) {
+				header('Location: /article/index');
 			}
 
 			$errors = array();
 			$check = true;
 
-			$title = isset($_POST['intro']) ? trim($_POST['intro']) : NULL;
+			$title = isset($_POST['title']) ? trim($_POST['title']) : NULL;
 			$category = isset($_POST['categoryList']) ? trim($_POST['categoryList']) : NULL;
 			$author = isset($_POST['authorList']) ? trim($_POST['authorList']) : NULL;
 			$intro = isset($_POST['intro']) ? trim($_POST['intro']) : NULL;
@@ -82,12 +84,13 @@
 				$authorName = $this->_model->getAuthorById((int)$author);
 				$categoryName = $this->_model->getCategoryById((int)$category);
 				$data = array(
-				'title' => $title,
-				'categoryName' => $categoryName,
-				'authorName' => $authorName,
-				'intro' => $intro,
-				'body' => $body
-				);
+					'title' => $title,
+					'categoryName' => $categoryName,
+					'authorName' => $authorName,
+					'intro' => $intro,
+					'body' => $body
+					);
+				console_log($data);
 				$this->_view->set('articleData', $data);
 
 

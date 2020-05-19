@@ -12,7 +12,6 @@
 		<?php include HOME . DS . 'includes' . DS . 'menu.inc.php'; ?>
 
 		<div class="container">
-			<h1>News articles</h1>
 
 			<?php
 				if ($articles):
@@ -22,7 +21,8 @@
 					<div class="col s12">
 						<article>
 							<header>
-								<h1><a href="/<?php echo APPROOT ?>/news/details/<?php echo $a['id']; ?>"><?php echo $a['title']; ?></a></h1>
+								<h4><a href="/news/details/<?php echo $a['id']; ?>"><?php echo $a['title']; ?></a></h4>
+								<h5><?php echo $a['author_name'] ?></h5>
 								<div class="categoryContainer">Category: 
 									<div class="newsCategoryBubble">
 										<?php echo $a['category_name'] ?>
@@ -31,7 +31,7 @@
 								<div class="pubDate"><?php echo $a['date']; ?></div>
 							</header>
 							<p><?php echo $a['intro']; ?></p>
-							<p><a href="/<?php echo APPROOT ?>/news/details/<?php echo $a['id']; ?>">Continue reading</a></p>
+							<p><a href="/news/details/<?php echo $a['id']; ?>">Continue reading</a></p>
 							<hr/>
 						</article>
 					</div>

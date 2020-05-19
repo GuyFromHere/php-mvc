@@ -1,6 +1,5 @@
 DROP DATABASE simplemvc;
 CREATE DATABASE simplemvc;
-USE simplemvc;
 
 CREATE TABLE IF NOT EXISTS `contact` (
 `id` INT(10) NOT NULL AUTO_INCREMENT,

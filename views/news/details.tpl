@@ -14,6 +14,7 @@
 			<article>
 				<header>
 					<h1><?php echo $title; ?></h1>
+					<h2>By <?php echo $author_name ?></h2>
 					<p>Published on: <time pubdate="pubdate"><?php echo $datePublished; ?></time></p>
 				</header>
 				<p>
@@ -21,7 +22,7 @@
 				</p>
 			</article>
 
-			<a href="/php-mvc/">Back to article list</a>
+			<a href="/">Back to article list</a>
 		</div>
 	</body>
 </html>

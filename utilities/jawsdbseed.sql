@@ -54,3 +54,5 @@ values ('Sports'),('Entertainment'),('Technology'),('Politics');
 insert into articles (category, author, title, intro, body)
 values (3, 1, 'New article', 'Dan made a thing.', 
 'Dan made a thing. This is the thing. How does this thing work? Am I working? Thanks Dan.');
+
+select * from articles;

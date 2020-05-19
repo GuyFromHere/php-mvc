@@ -29,7 +29,7 @@
 			?>
 
 
-			<form action="/<?php echo APPROOT ?>/article/save" method="post">
+			<form action="/article/save" method="post">
 
 				<div class="input-field col s12">
 					<input type="text" id="title" name="title" placeholder="Title"/>
@@ -84,7 +84,7 @@
 					<textarea name="body" id="body" class="hiddenText"></textarea>
 				</div>
 
-				<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+				<button class="btn waves-effect waves-light" type="submit" id="articleFormSubmit" name="action">Submit</button>
 			</form>
 		</div>
 		<script>

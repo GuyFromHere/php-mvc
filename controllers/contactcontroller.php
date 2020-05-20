@@ -3,13 +3,15 @@
 	class ContactController extends Controller {
 		public function index()
 		{
-			$this->_view->set('title', 'Simple site Contact Form');
+			$this->_view->set('title', 'Contact Form');
 			return $this->_view->output();
 		}
 
 		public function save(){
+			console_log('contact controller save');
+
 			if (!isset($_POST['contactFormSubmit'])) {
-				header('Location: /php-mvc/contact/index');
+				header('Location: /contact/index');
 			}
 
 			$errors = array();

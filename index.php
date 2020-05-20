@@ -5,9 +5,11 @@
     ini_set ('display_errors', 1);
 
     // require helper functions to be used in other scripts.
-    require_once HOME . DS . 'utilities' . DS . 'helpers.php';
+	require_once HOME . DS . 'utilities' . DS . 'helpers.php';
+	
     // Use config.php where it exists.
-    if (file_exists(HOME . DS . 'config.php' )) {
+	if (file_exists(HOME . DS . 'config.php' )) {
+		console_log('config found');
         require_once HOME . DS . 'config.php';
     } else {
         // config.php not found. Use ENV.

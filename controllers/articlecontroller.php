@@ -2,7 +2,6 @@
 
 	class ArticleController extends Controller {
 		public function __construct($model, $action) {
-
 			console_log('article controller constructor');
 			parent::__construct($model, $action);
 			$this->_setModel($model);
@@ -11,6 +10,8 @@
 		// load article form view
 		public function index() {
 			try {
+			console_log('article controller index');
+
 				// call getCategories method to populate categories drop down
 				$categories = $this->_model->getCategories();
 				$this->_view->set('categories', $categories); 
@@ -24,7 +25,9 @@
 		}
 
 		public function save(){
+			console_log('article controller save');
 			if (!isset($_POST['articleFormSubmit'])) {
+				// Redirect on submit
 				header('Location: /article/index');
 			}
 
@@ -67,13 +70,13 @@
 			}
 
 			try {
-				$contact = new ArticleModel();
-				$contact->setTitle($title);
-				$contact->setCategory($category);
-				$contact->setAuthor($author);
-				$contact->setIntro($intro);
-				$contact->setBody($body);
-				$contact->store();
+				$article = new ArticleModel();
+				$article->setTitle($title);
+				$article->setCategory($category);
+				$article->setAuthor($author);
+				$article->setIntro($intro);
+				$article->setBody($body);
+				$article->store();
 
 				// Set new view when article is successfully submitted.
 				$this->_setView('success');

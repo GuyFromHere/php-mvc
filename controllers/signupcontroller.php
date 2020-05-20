@@ -1,18 +1,15 @@
 <?php
 
-	class SigninController extends Controller {
+	class SignupController extends Controller {
+		public function index()
+		{
+			$this->_view->set('title', 'Sign Up');
+			return $this->_view->output();
+		}
 
-/* 		public function __construct($model, $action) {
-			console_log('signin controller constructor');
-			parent::__construct($model, $action);
-			$this->_setModel($model);
-		} */
-
-		
-		public function login(){
-			console_log('signin controller login');
-			if (!isset($_POST['signinFormSubmit'])) {
-				header('Location: /signin/index');
+		public function createUser(){
+			if (!isset($_POST['signupFormSubmit'])) {
+				header('Location: /php-mvc/signup/index');
 			}
 
 			$errors = array();
@@ -44,15 +41,14 @@
 
 			try {
 
-
 				$contact = new SigninModel();
-				/* $contact->setEmail($email);
+				$contact->setEmail($email);
 				$contact->setPassword($password);
-				$contact->store(); */
+				$contact->store();
 
 				// set view to success when form is submitted
 				$this->_setView('success');
-				$this->_view->set('title', 'Sign in success!');
+				$this->_view->set('title', 'Store success!');
 
 				// send user details to success template in userData variable
 				$data = array(
@@ -70,13 +66,5 @@
 
 			return $this->_view->output();
 		}
-
-		public function index()
-		{
-			console_log('signin controller index');
-			$this->_view->set('title', 'Sign In');
-			return $this->_view->output();
-		}
-
 	}
 ?>

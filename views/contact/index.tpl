@@ -18,8 +18,7 @@
 				</div>
 				<?php include HOME . DS . 'includes' . DS . 'error.inc.php'; ?>
 				
-
-				<form action="/php-mvc/contact/save" method="post" class="col s12">
+				<form action="/contact/save" method="post">
 
 					<div class="row">
 						<div class="input-field col s6">

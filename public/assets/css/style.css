@@ -36,11 +36,11 @@ a {
 .banner li:hover {
 	text-decoration: underline;
 }
-
+*/
 select {
 	display: block !important;
 }
- */
+ 
 .editableDiv {
 	background-color: #ffffff !important;
 	border: 1px solid gray;

@@ -1,6 +1,6 @@
 <?php
 
-	class SigninModel extends Model {
+	class SignupModel extends Model {
 		private $_email;
         private $_password;
         

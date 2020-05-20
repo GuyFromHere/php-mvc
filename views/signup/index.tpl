@@ -19,7 +19,27 @@
 
                 <?php include HOME . DS . 'includes' . DS . 'error.inc.php'; ?>
 
-                <form action="/signin/login" method="post">
+                <form action="/signup/createUser" method="post" class="col s12">
+
+					<div class="row">
+                        <div class="input-field col s6">
+                            <input value="<?php if(isset($formData)) echo $formData['first_name']; ?>" 
+                                type="text" 
+                                id="first_name" 
+                                name="first_name" 
+                            />
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input value="<?php if(isset($formData)) echo $formData['last_name']; ?>" 
+                                type="text" 
+                                id="last_name" 
+                                name="last_name" 
+                            />
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+
 
                     <div class="row">
                         <div class="input-field col s12">
@@ -43,7 +63,7 @@
                         </div>
                     </div>
 
-                    <button class="btn waves-effect waves-light" type="submit" id="signinFormSubmit" name="action">Submit</button>
+                    <button class="btn waves-effect waves-light" type="submit" id="signupFormSubmit" name="action">Submit</button>
                 </form>
             </div>
 		</main>

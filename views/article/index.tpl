@@ -19,60 +19,67 @@
 				<h1>Enter a new article:</h1>				
 
 				<form action="/article/save" method="post">
-					<div class="input-field col s12">
-						<input type="text" id="title" name="title" />
-						<label for="title">Title</label>
+					<div class="row">
+						<div class="input-field col s12">
+							<input type="text" id="title" name="title" />
+							<label for="title">Title</label>
+						</div>
 					</div>
-					
-					<div class="input-field col s12">	
-						<select id="category" name="categoryList">
-							<option value="" disabled selected>Choose a category</option>
-							<?php
-								if ($categories):
-								foreach ($categories as $c): 
-							?>
-								<option value="<?php echo $c['category_id']; ?>"><?php echo $c['category_name']; ?></option>
+					<div class="row">
+						<div class="input-field col s12">	
+							<select id="category" name="categoryList">
+								<option value="" disabled selected>Choose a category</option>
+								<?php
+									if ($categories):
+									foreach ($categories as $c): 
+								?>
+									<option value="<?php echo $c['category_id']; ?>"><?php echo $c['category_name']; ?></option>
 
-							<?php
-								endforeach;
-								else:
-							?>
-							<?php endif; ?>
-						</select>
-					</div>
-
-					<div class="input-field col s12">
-						<select id="author" name="authorList">
-							<option value="" disabled selected>Choose an author</option>
-							<?php
-								if ($authors):
-									foreach ($authors as $c): 
-							?>
-								<option value="<?php echo $c['author_id']; ?>">
-									<?php echo $c['author_name']; ?>
-								</option>
-
-							<?php
+								<?php
 									endforeach;
-							?>
-							<?php endif; ?>
-						</select>
+									else:
+								?>
+								<?php endif; ?>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<select id="author" name="authorList">
+								<option value="" disabled selected>Choose an author</option>
+								<?php
+									if ($authors):
+										foreach ($authors as $c): 
+								?>
+									<option value="<?php echo $c['author_id']; ?>">
+										<?php echo $c['author_name']; ?>
+									</option>
+
+								<?php
+										endforeach;
+								?>
+								<?php endif; ?>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<label>Intro</label>
+						<div class="input-field col s12">
+							
+							<div name="intro" id="inputDivIntro" name="inputDivIntro" contenteditable="true" class="editableDiv">
+							</div>
+							<textarea name="intro" id="intro" class="hiddenText"></textarea>
+						</div>
 					</div>
 					
-					<label>Intro</label>
-					<div class="input-field col s12">
-						
-						<div name="intro" id="inputDivIntro" name="inputDivIntro" contenteditable="true" class="editableDiv">
+					<div class="row">
+						<label>Body</label>
+						<div class="input-field col s12">
+							
+							<div name="body" id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv">
+							</div>
+							<textarea name="body" id="body" class="hiddenText"></textarea>
 						</div>
-						<textarea name="intro" id="intro" class="hiddenText"></textarea>
-					</div>
-					
-					<label>Body</label>
-					<div class="input-field col s12">
-						
-						<div name="body" id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv">
-						</div>
-						<textarea name="body" id="body" class="hiddenText"></textarea>
 					</div>
 					<button class="btn waves-effect waves-light" type="submit" id="articleFormSubmit" name="action">Submit</button>
 				</form>

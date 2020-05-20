@@ -2,6 +2,16 @@ DROP DATABASE IF EXISTS b2bw6z35scmdzdu9;
 CREATE DATABASE b2bw6z35scmdzdu9;
 USE b2bw6z35scmdzdu9;
 
+CREATE TABLE IF NOT EXISTS `users` (
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`first_name` VARCHAR(50) NULL,
+	`last_name` VARCHAR(50) NULL,
+	`email` VARCHAR(50) NOT NULL,
+    `password` VARCHAR(50) NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+
 CREATE TABLE IF NOT EXISTS `contact` (
 `id` INT(10) NOT NULL AUTO_INCREMENT,
 `first_name` VARCHAR(50) NULL,

@@ -16,9 +16,7 @@
 			<div class="container">
 				<?php include HOME . DS . 'includes' . DS . 'error.inc.php'; ?>
 				
-                <div class="row">
-				    <span class="formTitle">Enter a new article:</span>
-                </div>
+				<h1>Enter a new article:</h1>				
 
 				<form action="/article/save" method="post">
 					<div class="row">
@@ -27,13 +25,15 @@
 							<label for="title">Title</label>
 						</div>
 					</div>
-                    <div class="row">
-                        <?php include HOME . DS . 'views' . DS . 'article' . DS . 'categories.inc.php'; ?>
-                        <?php include HOME . DS . 'views' . DS . 'article' . DS . 'authors.inc.php'; ?>
-                    </div>
+					
+					<div class="row">
+						<?php include HOME . DS . 'views' . DS . 'article' . DS . 'categories.inc.php'; ?>
+	                    <?php include HOME . DS . 'views' . DS . 'article' . DS . 'authors.inc.php'; ?>
+					</div>
+
 					<div class="row">
 						<label>Intro</label>
-						<div class="input-field col m12 s12">
+						<div class="input-field col s12">
 							<div name="intro" id="inputDivIntro" name="inputDivIntro" contenteditable="true" class="editableDiv">
 							</div>
 							<textarea name="intro" id="intro" class="hiddenText"></textarea>
@@ -42,15 +42,14 @@
 					
 					<div class="row">
 						<label>Body</label>
-						<div class="input-field col m12 s12">
+						<div class="input-field col s12">
+							
 							<div name="body" id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv">
 							</div>
 							<textarea name="body" id="body" class="hiddenText"></textarea>
 						</div>
 					</div>
-                    <div class="row">
-					    <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="articleFormSubmit" >Submit</button>
-                    </div>
+					<button class="btn waves-effect waves-light" type="submit" name="articleFormSubmit" >Submit</button>
 				</form>
 			</div>
 		</main>

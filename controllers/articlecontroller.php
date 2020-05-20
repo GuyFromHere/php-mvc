@@ -2,7 +2,6 @@
 
 	class ArticleController extends Controller {
 		public function __construct($model, $action) {
-			console_log('article controller constructor');
 			parent::__construct($model, $action);
 			$this->_setModel($model);
 		}
@@ -10,8 +9,6 @@
 		// load article form view
 		public function index() {
 			try {
-			console_log('article controller index');
-
 				// call getCategories method to populate categories drop down
 				$categories = $this->_model->getCategories();
 				$this->_view->set('categories', $categories); 
@@ -25,7 +22,6 @@
 		}
 
 		public function save(){
-			console_log('article controller save');
 			if (!isset($_POST['articleFormSubmit'])) {
 				// Redirect on submit
 				header('Location: /article/index');
@@ -93,7 +89,6 @@
 					'intro' => $intro,
 					'body' => $body
 					);
-				console_log($data);
 				$this->_view->set('articleData', $data);
 
 

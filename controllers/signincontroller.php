@@ -26,7 +26,6 @@
 			$password = isset($_POST['password']) ? trim($_POST['password']) : "";
 
 			if (empty($email)) {
-				console_log('signin controller empty email');
 				$check = false;
 				array_push($errors, "E-mail is required!");
 			} else if (!filter_var( $email, FILTER_VALIDATE_EMAIL )) {
@@ -35,13 +34,11 @@
 			}
 
 			if (empty($password)) {
-				console_log('signin controller empty password');
 				$check = false;
 				array_push($errors, "Password is required!");
 			}
 
 			if (!$check) {
-				console_log('signin controller no check');
 				$this->_setView('index');
 				$this->_view->set('title', 'Invalid form data!');
 				$this->_view->set('errors', $errors);
@@ -78,7 +75,6 @@
 
 		public function index()
 		{
-			console_log('signin controller index');
 			$this->_view->set('title', 'Sign In');
 			return $this->_view->output();
 		}

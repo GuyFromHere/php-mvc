@@ -7,7 +7,6 @@
 
 		public function index() {
 		try {
-            console_log('home controller index()');
             // Set title tag for the new page's header
             $this->_view->set('title', 'Test Page');
 

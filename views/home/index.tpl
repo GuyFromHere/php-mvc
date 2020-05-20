@@ -3,7 +3,7 @@
 	<head>
 		<!-- new Article index -->
 		<meta charset="utf-8" />
-		<title>TEST PAGE</title>
+		<title>php-mvc | Example MVC site built in PHP</title>
 		<link rel="stylesheet" href="../public/assets/css/materialize.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../public/assets/css/style.css"/>
 
@@ -14,7 +14,7 @@
 		<main>
 			<div class="container">
 				<div class="row">
-					<div class="col s6 m5">
+					<div class="col s12 m5">
 						<div class="card-panel orange lighten-1">
 							<span class="white-text">Hi! This is a simple website I'm building in PHP. It looks pretty goofy right now because 
 							I'm still figuring out what I want to do with it. Feel free to check back later to see how it changes. 

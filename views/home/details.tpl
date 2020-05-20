@@ -15,9 +15,11 @@
 					<div class="articleHeader">
 						<span class="articleTitle"><?php echo $title; ?></span>
 						<span class="articleIntro"><?php echo $intro ?></span>
+						
 						<h5>By <?php echo $authorName ?></h5>
 						<h5>Published on: <time pubdate="pubdate"><?php echo $datePublished; ?></time></h5>
 					</div>
+					<div class="divider"></div>
 					<div class="articleBody">
 						<p><?php echo $articleBody; ?></p>
 					</div>

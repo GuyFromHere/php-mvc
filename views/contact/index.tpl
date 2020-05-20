@@ -14,7 +14,7 @@
 		<main>
 			<div class="container">
 				<div class="row">
-					<h1><?php echo $title; ?></h1>
+					<span class="formTitle"><?php echo $title; ?></span>
 				</div>
 				<?php include HOME . DS . 'includes' . DS . 'error.inc.php'; ?>
 				
@@ -49,28 +49,31 @@
 							<label for="email">Email</label>
 						</div>
 					</div>
-
 					<div class="row">
+						
 						<div class="input-field col s12">
-							<textarea name="message" id="message" rows="15" cols="50">
-								<?php if(isset($formData)) echo $formData['message']; ?>
-							</textarea>
-							<label for="message">Enter a message:</label>
+							<label>Message</label>
+							<div name="message" id="inputDivMessage" name="inputDivMessage" contenteditable="true" class="editableDiv">
+							</div>
+							<textarea name="message" id="message" class="hiddenText"><?php if(isset($formData)) echo $formData['message']; ?></textarea>
 						</div>
 					</div>
 
-					<button class="btn waves-effect waves-light" 
-						type="submit" 
-						name="contactFormSubmit" 
-					>
-						Submit
-					</button>
-
+					<div class="row">
+						<button class="btn waves-effect waves-light blue lighten-2" type="submit" name="contactFormSubmit" >Submit</button>
+					</div>
 					
 				</form>
 			</div>
 		</main>
 		<?php include HOME . DS . 'includes' . DS . 'footer.inc.php'; ?>
+		<script>
+			// Event Handlers
+			// Copy contents of input divs to hidden textareas which are used as form inputs.
+			document.getElementById("inputDivMessage").addEventListener("input", function(e) {
+				document.getElementById("message").innerHTML = e.target.innerHTML;
+			})
+		</script>
         <script type="text/javascript" src="../public/assets/js/materialize.min.js"></script>
 	</body>
 </html>

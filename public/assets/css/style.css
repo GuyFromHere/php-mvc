@@ -37,10 +37,15 @@ a {
 	text-decoration: underline;
 }
 */
+
+.formTitle {
+	font-size: 22pt;
+}
+
 select {
 	display: block !important;
 }
- 
+
 .editableDiv {
 	background-color: #ffffff !important;
 	border: 1px solid gray;

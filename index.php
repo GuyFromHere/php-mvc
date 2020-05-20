@@ -9,7 +9,6 @@
 	
     // Use config.php where it exists.
 	if (file_exists(HOME . DS . 'config.php' )) {
-		console_log('config found');
         require_once HOME . DS . 'config.php';
     } else {
         // config.php not found. Use ENV.

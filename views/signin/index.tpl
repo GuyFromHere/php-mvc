@@ -14,13 +14,12 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <h1><?php echo $title; ?></h1>
+                    <span class="formTitle"><?php echo $title; ?></span>
                 </div>
 
                 <?php include HOME . DS . 'includes' . DS . 'error.inc.php'; ?>
 
                 <form action="/signin/login" method="post">
-
                     <div class="row">
                         <div class="input-field col s12">
                             <input value="<?php if(isset($formData)) echo $formData['email']; ?>" 
@@ -31,7 +30,6 @@
                             <label for="email">Email</label>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="input-field col s12">
                             <input value="<?php if(isset($formData)) echo $formData['password']; ?>" 
@@ -43,8 +41,9 @@
                             <label for="password">Password</label>
                         </div>
                     </div>
-
-                    <button class="btn waves-effect waves-light" type="submit" name="signinFormSubmit">Submit</button>
+                    <div class="row">
+					    <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="signinFormSubmit" >Submit</button>
+                    </div>
                 </form>
             </div>
 		</main>

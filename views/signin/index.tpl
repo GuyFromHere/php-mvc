@@ -35,7 +35,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input value="<?php if(isset($formData)) echo $formData['password']; ?>" 
-                                type="text" 
+                                type="password" 
+								class="validate"
                                 id="password" 
                                 name="password" 
                             />
@@ -43,7 +44,7 @@
                         </div>
                     </div>
 
-                    <button class="btn waves-effect waves-light" type="submit" id="signinFormSubmit" name="action">Submit</button>
+                    <button class="btn waves-effect waves-light" type="submit" name="signinFormSubmit">Submit</button>
                 </form>
             </div>
 		</main>

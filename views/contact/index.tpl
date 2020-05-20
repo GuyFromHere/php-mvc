@@ -59,7 +59,14 @@
 						</div>
 					</div>
 
-					<button class="btn waves-effect waves-light" type="submit" id="contactFormSubmit" name="action">Submit</button>
+					<button class="btn waves-effect waves-light" 
+						type="submit" 
+						name="contactFormSubmit" 
+					>
+						Submit
+					</button>
+
+					
 				</form>
 			</div>
 		</main>

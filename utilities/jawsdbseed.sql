@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
 `first_name` VARCHAR(50) NULL,
 `last_name` VARCHAR(50) NULL,
 `email` VARCHAR(50) NOT NULL,
+`date` datetime NOT NULL DEFAULT current_timestamp,
 `message` TEXT NOT NULL,
 PRIMARY KEY (`id`)
 )

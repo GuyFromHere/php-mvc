@@ -6,9 +6,10 @@
 		<title>Add A New Article</title>
 		<link rel="stylesheet" href="../public/assets/css/materialize.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../public/assets/css/style.css"/>
-
+		<link rel="stylesheet" type="text/css" href="../public/assets/css/moztextstyle.css"/>
+        <script type="text/javascript" src="../public/assets/js/moztext.js"></script>
 	</head>
-	<body>
+	<body onload="initDoc();">
 
 		<?php include HOME . DS . 'includes' . DS . 'menu.inc.php'; ?>
 
@@ -19,8 +20,13 @@
                 <div class="row">
 				    <span class="formTitle">Enter a new article:</span>
                 </div>
-
-				<form action="/article/save" method="post">
+                <form
+                    name="compForm"
+                    action="/article/save" 
+                    method="post"
+                    //onsubmit="if(validateMode()){this.myDoc.value=oDoc.innerHTML;return true;}return false;"
+                >
+				<!-- <form action="/article/save" method="post"> -->
 					<div class="row">
 						<div class="input-field col s12">
 							<input type="text" id="title" name="title" />
@@ -41,17 +47,29 @@
 					</div>
 					
 					<div class="row">
+
 						<label>Body</label>
-						<div class="input-field col m12 s12">
-							<div name="body" id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv">
-							</div>
-							<textarea name="body" id="body" class="hiddenText"></textarea>
-						</div>
+                        <div class="input-field col m12 s12">
+                            <!-- Text editor lifted from https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content/Rich-Text_Editing_in_Mozilla -->
+                            <?php include HOME . DS . 'views' . DS . 'article' . DS . 'editor' . DS .'editor.inc.php'; ?>
+                            <textarea name="body" id="body" class="hiddenText"></textarea>
+                            <!-- 
+                            <div class="input-field col m12 s12">
+                                <div id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv">
+                                </div>
+                                
+                            </div> 
+                            -->    	
+                        </div>
 					</div>
+                
+
                     <div class="row">
 					    <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="articleFormSubmit" >Submit</button>
                     </div>
-				</form>
+                </form>
+
+
 			</div>
 		</main>
 		<?php include HOME . DS . 'includes' . DS . 'footer.inc.php'; ?>

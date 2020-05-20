@@ -4,13 +4,30 @@
 
 _This project is under construction._
 
-I wanted a meaty PHP project to provide a bit of a break from the node projects I'd been working on. I found [this](https://isitoktocode.com/post/create-a-simple-php-mvc-framework?cookieChange) tutorial for building a news app in PHP following the Model-View-Controller paradigm and thought it looked like fun. I started with that and added Materialize CSS as well as my own models and controllers. The goal is to build a fully functional blog with authentication and a WSIWYG editor. 
+I wanted a meaty PHP project to provide a bit of a break from the node projects I'd been working on. I found [this](https://isitoktocode.com/post/create-a-simple-php-mvc-framework?cookieChange) tutorial for building a news app in PHP following the Model-View-Controller paradigm and thought it looked like fun. I started with that and added Materialize CSS then started to build out my own models and controllers. The goal is to build a fully functional blog template with authentication and a WSIWYG editor.
 
-![add an article](readme/add.png)
+This is kind of a free form exercise so it should change a lot over time. Check out my progress at https://php-mvc-gfh.herokuapp.com/.
+
+![add an article](readme/home.png)
 
 # Dependencies
 
 You need an Apache web server and a local MySQL server.
+
+Uncomment this line in httpd.conf to allow URL rewrites:
+
+\
+LoadModule rewrite_module modules/mod_rewrite.so
+\
+
+Configure .htaccess to accept a parameter called 'load':
+
+\
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.\*)$ index.php?load=$1 [PT,L]
+\
 
 Create a file called config.php in the root of the folder. Store your database credentials here. It should look like this:
 

@@ -25,10 +25,6 @@
     $modelName = $controller;
     $controller .= 'Controller';
 	$load = new $controller($modelName, $action);
-	console_log('bootstrap $modelName');
-	console_log($modelName);
-	console_log('bootstrap $action');
-	console_log($action);
 	
     // invoke method named after $action 
     // e.g. $load->index($query))

@@ -2,7 +2,7 @@
 <div id="toolBar" class="row">
     <?php include HOME . DS . 'views' . DS . 'article' . DS . 'editor' . DS .'toolbar.inc.php'; ?>
 </div>
-<div id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv" ><p>Lorem ipsum</p>
+<div id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv" >
 </div>
 <p id="editMode">
 	<input

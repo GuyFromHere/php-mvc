@@ -40,9 +40,6 @@
 						<div class="margin-y-0 input-field col m12 s12">
 							<input type="text" id="intro" name="intro" />
 							<label for="intro">Intro</label>
-							<!--<div name="intro" id="inputDivIntro" name="inputDivIntro" contenteditable="true" class="editableDiv">
-							</div>-->
-							<textarea name="intro" id="intro" class="hiddenText"></textarea>
 						</div>
 					</div>
 					
@@ -66,13 +63,8 @@
 		</main>
 		<?php include HOME . DS . 'includes' . DS . 'footer.inc.php'; ?>
 		<script>
-			// Event Handlers
-			// Copy contents of input divs to hidden textareas which are used as form inputs.
-			document.getElementById("inputDivIntro").addEventListener("input", function(e) {
-				document.getElementById("intro").innerHTML = e.target.innerHTML;
-			})
-			
 			document.getElementById("inputDivBody").addEventListener("input", function(e) {
+				document.getElementById("body").innerHTML
 				document.getElementById("body").innerHTML = e.target.innerHTML;
 			})
 		</script>

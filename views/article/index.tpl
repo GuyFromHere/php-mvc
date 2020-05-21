@@ -24,12 +24,10 @@
                     name="compForm"
                     action="/article/save" 
                     method="post"
-                    //onsubmit="if(validateMode()){this.myDoc.value=oDoc.innerHTML;return true;}return false;"
                 >
-				<!-- <form action="/article/save" method="post"> -->
 					<div class="row">
-						<div class="input-field col s12">
-							<input type="text" id="title" name="title" />
+						<div class="margin-y-0 input-field col s12">
+                            <input type="text" id="title" name="title" />
 							<label for="title">Title</label>
 						</div>
 					</div>
@@ -38,10 +36,12 @@
                         <?php include HOME . DS . 'views' . DS . 'article' . DS . 'authors.inc.php'; ?>
                     </div>
 					<div class="row">
-						<label>Intro</label>
-						<div class="input-field col m12 s12">
-							<div name="intro" id="inputDivIntro" name="inputDivIntro" contenteditable="true" class="editableDiv">
-							</div>
+						<!-- <label>Intro</label> -->
+						<div class="margin-y-0 input-field col m12 s12">
+							<input type="text" id="intro" name="intro" />
+							<label for="intro">Intro</label>
+							<!--<div name="intro" id="inputDivIntro" name="inputDivIntro" contenteditable="true" class="editableDiv">
+							</div>-->
 							<textarea name="intro" id="intro" class="hiddenText"></textarea>
 						</div>
 					</div>
@@ -52,18 +52,10 @@
                         <div class="input-field col m12 s12">
                             <!-- Text editor lifted from https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content/Rich-Text_Editing_in_Mozilla -->
                             <?php include HOME . DS . 'views' . DS . 'article' . DS . 'editor' . DS .'editor.inc.php'; ?>
-                            <textarea name="body" id="body" class="hiddenText"></textarea>
-                            <!-- 
-                            <div class="input-field col m12 s12">
-                                <div id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv">
-                                </div>
-                                
-                            </div> 
-                            -->    	
+                            <textarea name="body" id="body" class="hiddenText"></textarea> 	
                         </div>
 					</div>
                 
-
                     <div class="row">
 					    <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="articleFormSubmit" >Submit</button>
                     </div>

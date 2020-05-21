@@ -1,5 +1,5 @@
 
-	<div class="input-field col s12 m6">
+	<div class="margin-y-0 input-field col s12 m6">
 		<select id="author" name="authorList">
 			<option value="" disabled selected>Choose an author</option>
 			<?php

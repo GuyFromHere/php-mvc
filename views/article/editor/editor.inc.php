@@ -1,5 +1,7 @@
 <input type="hidden" name="myDoc" />	
-<?php include HOME . DS . 'views' . DS . 'article' . DS . 'editor' . DS .'toolbar.inc.php'; ?>
+<div id="toolBar" class="row">
+    <?php include HOME . DS . 'views' . DS . 'article' . DS . 'editor' . DS .'toolbar.inc.php'; ?>
+</div>
 <div id="inputDivBody" name="inputDivBody" contenteditable="true" class="editableDiv" ><p>Lorem ipsum</p>
 </div>
 <p id="editMode">

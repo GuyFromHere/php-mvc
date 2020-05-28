@@ -5,11 +5,28 @@
 }
 
 body {
-	background-color: #e3f2fd;
+	/* background-color: #e3f2fd; */
+	background-color: #a2a6e2;
 	/* materialze: for sticky footer  */
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+}
+
+nav {
+	background-color: #4f3fb9;
+}
+
+.brand-logo {
+	left: 1rem;
+}
+
+#nav-mobile {
+	margin-right: 0.5rem;
+}
+
+.page-footer {
+	background-color: #4f3fb9 !important;
 }
 
 main {
@@ -17,29 +34,10 @@ main {
 	flex: 1 0 auto;
 }
 
-/*
-li {
-	float: left;
-	margin-right: 1.5rem;
-	list-style-type: none;
-} 
-a {
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.banner {
-	padding: 1rem;
-	font-size: 24pt;
-}
-
-.banner li:hover {
-	text-decoration: underline;
-}
-*/
-
 .formTitle {
 	font-size: 22pt;
+	margin-left: 0.5rem;
+	color: #ffffff;
 }
 
 .margin-y-0 {
@@ -62,13 +60,45 @@ select {
 	display: none;
 }
 
-.articleTitle {
+.article-container {
+	background-color: #e0f0fb;
+	padding: 1.5rem;
+	margin: 0.5rem;
+}
+
+.articleHeader span {
 	display: block;
-	color: white;
+	color: #ffffff;
+}
+
+.articleTitle {
 	font-size: 24pt;
+	text-shadow: 2px 1px 1px black;
 }
 
 .articleIntro {
-	color: white;
+	color: black !important;
 	font-size: 16pt;
+	/* text-shadow: 1px 0px 0px black; */
+}
+
+.articleAuthor,
+.articlePubDate {
+	font-size: 10pt;
+	font-style: italic;
+}
+
+input[type="text"] {
+	border-bottom: 1px solid #ffffff !important;
+	color: #ffffff;
+}
+
+label,
+.body-label {
+	color: #ffffff !important;
+	left: 0.75rem;
+}
+
+#submitArticleBtn {
+	margin-left: 0.5rem;
 }

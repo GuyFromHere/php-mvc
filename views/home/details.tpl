@@ -12,12 +12,13 @@
 		<?php include HOME . DS . 'includes' . DS . 'menu.inc.php'; ?>
 		<main>
 			<div class="container">
+				<div class="article-container cyan lighten-4">
 					<div class="articleHeader">
 						<span class="articleTitle"><?php echo $title; ?></span>
 						<span class="articleIntro"><?php echo $intro ?></span>
 						
-						<h5>By <?php echo $authorName ?></h5>
-						<h5>Published on: <time pubdate="pubdate"><?php echo $datePublished; ?></time></h5>
+						<span class="articleAuthor">By <?php echo $authorName ?></span>
+						<span class="articlePubDate">Published on: <time pubdate="pubdate"><?php echo $datePublished; ?></time></span>
 					</div>
 					<div class="divider"></div>
 					<div class="articleBody">
@@ -25,6 +26,7 @@
 					</div>
 
 				<a href="/">Back to article list</a>
+				</div>
 			</div>
 		</main>
 		<?php include HOME . DS . 'includes' . DS . 'footer.inc.php'; ?>

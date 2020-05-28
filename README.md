@@ -61,7 +61,9 @@ For now, just click the links in the nav to access the pages. Click Add to save 
 
 Add authentication
 
-Text editor
+~~Text editor~~
+
+Refine text editor (replace obsolete javascript, formatting for lists, etc.)
 
 Image uploads
 

@@ -36,7 +36,6 @@
                         <?php include HOME . DS . 'views' . DS . 'article' . DS . 'authors.inc.php'; ?>
                     </div>
 					<div class="row">
-						<!-- <label>Intro</label> -->
 						<div class="margin-y-0 input-field col m12 s12">
 							<input type="text" id="intro" name="intro" />
 							<label for="intro">Intro</label>
@@ -44,9 +43,10 @@
 					</div>
 					
 					<div class="row">
-
-						<label>Body</label>
-                        <div class="input-field col m12 s12">
+                        <div class="margin-y-0 input-field col m12 s12">
+							<span class="body-label">Body</span>
+						</div>
+                        <div class="input-field col m12 s12" name="editDiv">
                             <!-- Text editor lifted from https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content/Rich-Text_Editing_in_Mozilla -->
                             <?php include HOME . DS . 'views' . DS . 'article' . DS . 'editor' . DS .'editor.inc.php'; ?>
                             <textarea name="body" id="body" class="hiddenText"></textarea> 	
@@ -54,7 +54,7 @@
 					</div>
                 
                     <div class="row">
-					    <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="articleFormSubmit" >Submit</button>
+					    <button id="submitArticleBtn" class="btn waves-effect waves-light blue lighten-2" type="submit" name="articleFormSubmit" >Submit</button>
                     </div>
                 </form>
 

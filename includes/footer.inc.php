@@ -1,4 +1,4 @@
-<footer class="page-footer blue lighten-2">
+<footer class="page-footer">
   	<div class="footer-copyright">
     	<div class="container">
     		© Copyright 2020 DismuckerNet

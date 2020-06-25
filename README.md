@@ -31,8 +31,6 @@ RewriteRule ^(.\*)$ index.php?load=$1 [PT,L]
 
 Create a file called config.php in the root of the folder. Store your database credentials here. It should look like this:
 <pre>
-<?php
-
 define ('DB_HOST', 'localhost');
 
 define ('DB_NAME', 'your_dbname');
@@ -40,8 +38,6 @@ define ('DB_NAME', 'your_dbname');
 define ('DB_USER', 'your_username');
 
 define ('DB_PASS', 'your_password');
-
-?>
 </pre>
 
 NOTE: The MySQL user must have write access to the database.

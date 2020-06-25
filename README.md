@@ -16,22 +16,22 @@ You need an Apache web server and a local MySQL server.
 
 Uncomment this line in httpd.conf to allow URL rewrites:
 
-\
+<pre>
 LoadModule rewrite_module modules/mod_rewrite.so
-\
+</pre>
 
 Configure .htaccess to accept a parameter called 'load':
 
-\
+<pre>
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.\*)$ index.php?load=$1 [PT,L]
-\
+</pre>
 
 Create a file called config.php in the root of the folder. Store your database credentials here. It should look like this:
-
-\<?php
+<pre>
+<?php
 
 define ('DB_HOST', 'localhost');
 
@@ -41,7 +41,8 @@ define ('DB_USER', 'your_username');
 
 define ('DB_PASS', 'your_password');
 
-\?>
+?>
+</pre>
 
 NOTE: The MySQL user must have write access to the database.
 
